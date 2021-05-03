@@ -11,7 +11,7 @@ PHP를 사용한 유저 커뮤니티 사이트
 ## 개요
 
 **Title - 투밋네이버(To meet Neighbor)**<br>
-PHP를 사용하여 로그인, 로그아웃, 게시판, 글쓰기 등 커뮤니티 사이트 기능을 구현해보자
+PHP를 사용하여 로그인, 로그아웃, 게시판, 글쓰기, 취업정보 등 커뮤니티 사이트 기능을 구현해보자
 
 ## 구성
 
@@ -20,78 +20,142 @@ PHP를 사용하여 로그인, 로그아웃, 게시판, 글쓰기 등 커뮤니�
 #### 메인화면
 
 - [ ] 투두리스트
+  - [ ] 예정
+  - [ ] 완료
+  - [ ] D-day 설정
 - [ ] 시계
+  - [ ] 시계 그림
+  - [ ] 시간
 - [ ] 날씨
-- [ ] 주간 인기글(5개)
-- [ ] 커뮤니티(10개)
-- [ ] 최근메일(5개)
-
-#### 로그인 / 로그아웃
-
-- [ ] Form(label)양식(POST)
-- [ ] 카카오로 로그인
-
-#### 회원가입
-
-- [ ] Form(label)양식
-- [ ] 카카오로 가입
-
-#### 메일
-
-- [ ] 메일쓰기
-- [ ] 보관함
-
-#### 커뮤니티
-
-- [ ] 게시판
-- [ ] 글쓰기
-- [ ] 댓글
+  - [ ] 섭씨(30℃)
+  - [ ] 위치
+  - [ ] 날씨(맑음, 비, 눈 등)
+- [ ] 주간 인기글 5개
+- [ ] 일간 채용 TOP5
+- [ ] 최근메일 5개
 
 #### 검색
 
-- [ ] Form(input)양식(GET)
+- [ ] 검색 양식(GET)
+  - [ ] 입력 창
+  - [ ] 버튼
+
+#### 회원가입
+
+- [ ] 카카오로 가입
+- [ ] 일반 회원가입
+  - [ ] 아이디
+  - [ ] 비번
+  - [ ] 이메일
+  - [ ] 이름
+  - [ ] 전화번호
+  - [ ] 주소
+  - [ ] 이메일 수신 여부
+
+#### 로그인 / 로그아웃
+
+- [ ] 일반 로그인 양식(POST)
+- [ ] 카카오로 로그인
+
+### 마이페이지
+
+- [ ] 내 정보
+- [ ] 정보 수정
+  - [ ] 닉네임 수정
+  - [ ] 비밀번호 수정
+  - [ ] 이메일 수정
+  - [ ] 주소 수정
+  - [ ] 전화번호 수정
+- [ ] 내가 쓴 글
+- [ ] 성적 관리
+  - [ ] 성적 정보
+    - [ ] 전체 평균 성적
+    - [ ] 성적 별 출력
+  - [ ] 성적 추가/수정
+    - [ ] 과목 추가
+    - [ ] 과목 별 출력(선택)
+
+#### 커뮤니티
+
+- [ ] 통합 게시판
+- [ ] 자유 게시판
+- [ ] 구인 게시판
+- [ ] 정보 게시판
+- [ ] 스터디 게시판
+- [ ] 글쓰기
+  - [ ] 제목
+  - [ ] 태그
+  - [ ] 첨부파일
+  - [ ] 내용
+  - [ ] 확인
+  - [ ] 취소
+  - [ ] 댓글
+
+#### 잡코리아
+
+- [ ] 일간 채용
+  - [ ] 잡코리아 일간 채용 TOP100에서 HTML파싱
+  - [ ] 신입
+  - [ ] 경력
+- [ ] 공채소식
+
+<!-- #### 메일
+
+- [ ] 메일 쓰기
+- [ ] 내게 쓰기
+- [ ] 임시 보관함
+- [ ] 메일 보관함 -->
 
 ### Database
 
 #### user 테이블
 
-| 필드명        | 데이터명 | null     | 추가 사항       | 설명          |
-| :------------ | -------- | -------- | --------------- | :------------ |
-| num           | int      | not null | **primary key** | 사용자 넘버   |
-| id            | char(20) | not null |                 | 아이디        |
-| name          | char(20) | not null |                 | 이름          |
-| gender        | char(1)  | null     |                 | 성별          |
-| post_num      | char(8)  | null     |                 | 우편번호      |
-| address       | char(40) | null     |                 | 이메일 주소   |
-| kakao_address | char(40) | null     |                 | 카카오 이메일 |
-| tel           | char(20) | null     |                 | 전화번호      |
-| age           | int      | null     |                 | 나이          |
-| role          | char     | not null |                 | 역할(우선도)  |
-| user_mail_no  | int      | not null | **foreign key** | 메일 넘버     |
-| user_post_no  | int      | not null | **foreign key** | 게시글 넘버   |
+| 필드명         | 데이터명 | null     | 추가 사항                       | 설명          |
+| :------------- | -------- | -------- | ------------------------------- | :------------ |
+| num            | int      | not null | **auto_increment, primary key** | 사용자 넘버   |
+| id             | char(20) | not null |                                 | 아이디        |
+| nickname       | char(20) | not null |                                 | 닉네임        |
+| name           | char(20) | not null |                                 | 이름          |
+| gender         | char(1)  | not null |                                 | 성별          |
+| post_num       | char(8)  | not null |                                 | 우편번호      |
+| address        | char(40) | not null |                                 | 이메일 주소   |
+| tel            | char(20) | not null |                                 | 전화번호      |
+| age            | int      | not null |                                 | 나이          |
+| role           | char(1)  | not null |                                 | 역할(우선도)  |
+| user_post_no   | int      | not null | **foreign key**                 | 게시글 넘버   |
+| user_credit_no | int      | not null | **foreign key**                 | 학점관리 넘버 |
 
 #### post 테이블
 
-| 필드명            | 데이터명   | null     | 추가 사항       | 설명             |
-| :---------------- | ---------- | -------- | --------------- | :--------------- |
-| num               | int        | not null | **primary key** | 게시글 넘버      |
-| title             | char(100)  | not null |                 | 게시글 제목      |
-| content           | char(4000) | not null |                 | 게시글 내용      |
-| option            | char       | not null |                 | 게시글 옵션      |
-| post_user_no      | int        | not null | **foreign key** | 작성자 넘버      |
-| post_comment_list | list(int)  | not null | **foreign key** | 댓글 넘버 리스트 |
+| 필드명          | 데이터명   | null     | 추가 사항                       | 설명        |
+| :-------------- | ---------- | -------- | ------------------------------- | :---------- |
+| num             | int        | not null | **auto_increment, primary key** | 게시글 넘버 |
+| title           | char(100)  | not null |                                 | 게시글 제목 |
+| content         | char(4000) | not null |                                 | 게시글 내용 |
+| option          | char(1)    | not null |                                 | 게시글 옵션 |
+| post_user_no    | int        | not null | **foreign key**                 | 작성자 넘버 |
+| post_comment_no | int        | not null | **foreign key**                 | 댓글 넘버   |
 
 #### comment 테이블
 
-| 필드명          | 데이터명   | null     | 추가 사항       | 설명        |
-| :-------------- | ---------- | -------- | --------------- | :---------- |
-| num             | int        | not null | **primary key** | 댓글 넘버   |
-| content         | char(1000) | not null |                 | 댓글 내용   |
-| option          | char       | not null |                 | 댓글 옵션   |
-| comment_user_no | int        | not null | **foreign key** | 작성자 넘버 |
-| comment_post_no | int        | not null | **foreign key** | 게시글 넘버 |
+| 필드명          | 데이터명   | null     | 추가 사항                       | 설명        |
+| :-------------- | ---------- | -------- | ------------------------------- | :---------- |
+| num             | int        | not null | **auto_increment, primary key** | 댓글 넘버   |
+| content         | char(1000) | not null |                                 | 댓글 내용   |
+| option          | char(1)    | not null |                                 | 댓글 옵션   |
+| comment_post_no | int        | not null | **foreign key**                 | 게시글 넘버 |
+| comment_user_no | int        | not null | **foreign key**                 | 작성자 넘버 |
 
-#### mail 테이블
+#### credit 테이블
+
+| 필드명 | 데이터명 | null     | 추가 사항                       | 설명          |
+| :----- | -------- | -------- | ------------------------------- | :------------ |
+| num    | int      | not null | **auto_increment, primary key** | 학점관리 넘버 |
+| name   | char(30) | not null |                                 | 과목 이름     |
+| score  | char(2)  | not null |                                 | 과목 점수     |
+| credit | float    | not null |                                 | 과목 학점     |
+
+<!-- #### mail 테이블
 
 | 필드명       | 데이터명   | null     | 추가 사항       | 설명        |
 | :----------- | ---------- | -------- | --------------- | :---------- |
@@ -101,14 +165,23 @@ PHP를 사용하여 로그인, 로그아웃, 게시판, 글쓰기 등 커뮤니�
 | content      | char(4000) | not null |                 | 메일 내용   |
 | option       | char       | not null |                 | 메일 옵션   |
 | mail_user_no | int        | not null | **foreign key** | 사용자 넘버 |
+-->
 
 <br>
 
 # 개발 환경
 
-## H/W 및 S/W 환경
+## H/W 환경
 
-- Microsoft Windows10
+- Mainboard: ASUS PRIME B460M-A
+- CPU: Intel Core I5-10400F CPU @ 2.90GHz
+- RAM: 16GB
+- GPU: NVIDIA GeForce GTX 1060 6GB
+- SSD: KLEVV NEO N400 SSD 240GB
+
+## S/W 환경
+
+- Microsoft Windows 10
 - Visual Studio Code
 
 ## 사용 언어
