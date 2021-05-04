@@ -1,0 +1,22 @@
+/* Default */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "reset.css";
+@import "variables.css";
+
+/* Components */
+@import "components/search-box.css";
+
+/* Screens */
+@import "screens/main-screen.css";
+@import "screens/side-bar.css";
+
+/* Animations */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
