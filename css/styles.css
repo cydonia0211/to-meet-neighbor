@@ -5,15 +5,24 @@
 
 /* Components */
 @import "components/search-box.css";
+@import "components/side-bar.css";
 
 /* Screens */
+@import "screens/community-screen.css";
+@import "screens/find-screen.css";
+@import "screens/info-screen.css";
+@import "screens/jobs-screen.css";
+@import "screens/join-screen.css";
+@import "screens/login-screen.css";
 @import "screens/main-screen.css";
-@import "screens/side-bar.css";
+@import "screens/mypage-screen.css";
+@import "screens/post-screen.css";
 
 /* Animations */
 
 * {
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
