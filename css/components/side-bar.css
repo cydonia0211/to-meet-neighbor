@@ -76,7 +76,7 @@
 .sidebar__nav--menu__item__sub {
   background: #333;
   overflow: hidden;
-  transition: max-height 0.6s;
+  transition: max-height 1s ease;
   max-height: 0;
 }
 
@@ -106,5 +106,5 @@
 }
 
 .sidebar__nav--menu__item:hover .sidebar__nav--menu__item__sub {
-  max-height: 10em;
+  max-height: 16em;
 }

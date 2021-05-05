@@ -10,8 +10,19 @@
     />
   </head>
   <body>
+    <!-- 세션 등록 -->
+    <?php
+      // session_start();
+      // $_SESSION['userid'] = "test";
+    ?>
+    <!-- 세션 해제 -->
+    <?php
+      // session_start();
+      // unset($_SESSION['userid']);
+    ?>
+
     <nav class="sidebar">
-      <a href="/index.html" class="sidebar__title">
+      <a href="./index.html" class="sidebar__title">
         <i></i>
         <div class="sidebar__title--span">
           <span>To meet</span>
@@ -35,20 +46,36 @@
       </div>
 
       <div class="sidebar__nav-user">
-        <a href="/login.html" class="sidebar__nav-user--login">
+        <!-- 세션 안됬을 때 -->
+        <?php
+          if(!isset($_SESSION['userid'])) {
+        ?>
+        <a href="./login.html" class="sidebar__nav-user--login">
           <i class="fas fa-sign-in-alt fa-lg"></i>
           <span>로그인</span>
         </a>
-        <a href="/join.html" class="sidebar__nav-user--join">
+        <a href="./join.html" class="sidebar__nav-user--join">
           <i class="fas fa-door-open fa-lg"></i>
           <span>회원가입</span>
         </a>
+        <?php
+          }
+          else {
+        ?>
+        <!-- 세션 됬을 때 -->
+        <a href="./logout.html" class="sidebar__nav-user--login">
+          <i class="fas fa-sign-in-alt fa-lg"></i>
+          <span>로그아웃</span>
+        </a>
+        <?php
+          }
+        ?>
       </div>
 
       <div class="sidebar__nav">
         <div class="sidebar__nav--menu">
           <li class="sidebar__nav--menu__item" id="mypage">
-            <a href="/mypage.html" class="sidebar__nav--menu__item--btn"
+            <a href="./mypage.html" class="sidebar__nav--menu__item--btn"
               ><i class="fas fa-user fa-lg"></i>마이페이지</a
             >
             <div class="sidebar__nav--menu__item__sub">
@@ -59,7 +86,7 @@
           </li>
 
           <li class="sidebar__nav--menu__item" id="community">
-            <a href="/community.html" class="sidebar__nav--menu__item--btn"
+            <a href="./community.html" class="sidebar__nav--menu__item--btn"
               ><i class="fas fa-comments fa-lg"></i>커뮤니티</a
             >
             <div class="sidebar__nav--menu__item__sub">
@@ -72,7 +99,7 @@
           </li>
 
           <li class="sidebar__nav--menu__item" id="jobs">
-            <a href="/jobs.html" class="sidebar__nav--menu__item--btn"
+            <a href="./jobs.html" class="sidebar__nav--menu__item--btn"
               ><i class="fas fa-building fa-lg"></i>Jobs</a
             >
             <div class="sidebar__nav--menu__item__sub">
@@ -82,7 +109,7 @@
           </li>
 
           <li class="sidebar__nav--menu__item" id="info">
-            <a href="/info.html" class="sidebar__nav--menu__item--btn"
+            <a href="./info.html" class="sidebar__nav--menu__item--btn"
               ><i class="fas fa-info-circle fa-lg"></i>Info</a
             >
           </li>
