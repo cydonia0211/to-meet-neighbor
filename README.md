@@ -171,14 +171,6 @@ PHP를 사용하여 로그인, 로그아웃, 게시판, 글쓰기, 취업정보 
 
 # 개발 환경
 
-## H/W 환경
-
-- Mainboard: ASUS PRIME B460M-A
-- CPU: Intel Core I5-10400F CPU @ 2.90GHz
-- RAM: 16GB
-- GPU: NVIDIA GeForce GTX 1060 6GB
-- SSD: KLEVV NEO N400 SSD 240GB
-
 ## S/W 환경
 
 - Microsoft Windows 10
